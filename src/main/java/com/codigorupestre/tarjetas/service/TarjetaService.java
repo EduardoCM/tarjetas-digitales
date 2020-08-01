@@ -3,12 +3,13 @@ package com.codigorupestre.tarjetas.service;
 import java.util.List;
 
 import com.codigorupestre.tarjetas.model.Tarjeta;
+import com.codigorupestre.tarjetas.model.TarjetaEntity;
 
 public interface TarjetaService {
 
-	Tarjeta creartarjeta(Tarjeta tarjeta);
+	TarjetaEntity creartarjeta(TarjetaEntity tarjeta);
 
-	List<Tarjeta> obtenerTarjetas();
+	List<TarjetaEntity> obtenerTarjetas();
 
 	Tarjeta obtenerTarjeta(String numeroTarjeta);
 

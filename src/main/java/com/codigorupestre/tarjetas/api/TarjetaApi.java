@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codigorupestre.tarjetas.model.Tarjeta;
+import com.codigorupestre.tarjetas.model.TarjetaEntity;
 import com.codigorupestre.tarjetas.service.TarjetaService;
 
 
@@ -29,7 +30,7 @@ public class TarjetaApi {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Tarjeta creartarjeta(@RequestBody Tarjeta tarjeta) {
+	public TarjetaEntity creartarjeta(@RequestBody TarjetaEntity tarjeta) {
 		return tarjetaService.creartarjeta(tarjeta);	
 	}
 	
@@ -39,7 +40,7 @@ public class TarjetaApi {
 	}
 
 	@GetMapping
-	public  List<Tarjeta> obtenerTarjetas(){
+	public  List<TarjetaEntity> obtenerTarjetas(){
 		return tarjetaService.obtenerTarjetas();
 	}
 

@@ -6,43 +6,43 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.codigorupestre.tarjetas.model.Tarjeta;
+import com.codigorupestre.tarjetas.model.TarjetaEntity;
 import com.codigorupestre.tarjetas.repository.TarjetaRepository;
+import com.codigorupestre.tarjetas.repository.TarjetaRepositoryOracle;
 
 
 @Service
 public class TarjetaServiceImpl implements TarjetaService {
 	
 	@Autowired
-	private TarjetaRepository repository;
+	private TarjetaRepositoryOracle repository;
 
 	@Override
-	public Tarjeta creartarjeta(Tarjeta tarjeta) {
-		return repository.creartarjeta(tarjeta);
+	public TarjetaEntity creartarjeta(TarjetaEntity tarjeta) {
+		return repository.save(tarjeta);
 	}
 
 	@Override
-	public List<Tarjeta> obtenerTarjetas() {
-		return repository.obtenerTarjetas();
+	public List<TarjetaEntity> obtenerTarjetas() {
+		return repository.findAll();
 	}
 
 	@Override
 	public Tarjeta obtenerTarjeta(String numeroTarjeta) {
-		return repository.obtenerTarjeta(numeroTarjeta);
+		  return new Tarjeta();
 	}
 
 	@Override
 	public void eliminarTarjeta(String numeroTarjeta) {
-		repository.eliminarTarjeta(numeroTarjeta);
 	}
 
 	@Override
 	public Tarjeta actualizarTarjeta(int index, Tarjeta tarjeta) {
-		return repository.actualizarTarjeta(index, tarjeta);
+	  return new Tarjeta();
 	}
 
 	@Override
 	public void eliminarTodos() {
-		repository.eliminarTodos();
 		
 	}
 
